@@ -1,0 +1,38 @@
+package TestaContaCorrente;
+//Classe
+public class ContaCorrente {
+    //Atributos
+    private String agencia;
+    private String conta;
+    private double saldo;
+    //Meu Método - Métodos Personalizados
+    public void deposito(double valor) {
+        this.setSaldo(getSaldo() + valor); 
+        System.out.println("");
+        System.out.println("Depósito realizado com Sucesso");
+        }
+    public void saque(double valor) {
+        this.setSaldo(getSaldo() - valor);
+        System.out.println("");
+        System.out.println("Saque realizado com Sucesso");
+    }
+    //Métodos Acessores e Modificadores
+    public String getAgencia() {
+        return agencia;
+    }
+    public void setAgencia(String agencia) {
+        this.agencia = agencia;
+    }
+    public String getConta() {
+        return conta;
+    }
+    public void setConta(String conta) {
+        this.conta = conta;
+    }
+    public double getSaldo() {
+        return saldo;
+    }
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+}
