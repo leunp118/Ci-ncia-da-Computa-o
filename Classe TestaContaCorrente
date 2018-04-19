@@ -1,0 +1,42 @@
+package TestaContaCorrente;
+
+import java.util.Scanner;
+
+public class TestaContaCorrente {
+    
+    public void escolhaOperacao(int operacao, Scanner read, ContaCorrente c) {
+        switch (operacao) {
+            case 1:
+                System.out.println("");
+                System.out.println("Depósito");
+                System.out.println("Digite um valor a depositar: ");
+                c.deposito(read.nextDouble());
+                break;
+            case 2:
+                System.out.println("");
+                System.out.println("Saque");
+                System.out.println("Digite um valor a sacar: ");
+                c.saque(read.nextDouble());
+                break;
+            default:
+                System.out.println("");
+                System.out.println("Por favor, digite somente 1 ou 2");
+                break;
+        }
+    }
+    public static void main(String[] args) {
+                Scanner read = new Scanner(System.in);
+                TestaContaCorrente t = new TestaContaCorrente();
+                
+                System.out.println("1 - Depósito");
+                System.out.println("2 - Saque");
+                System.out.println("Digite o nº da Agência, C.C. e Operação: ");
+                
+                ContaCorrente c = new ContaCorrente();
+                while(read.hasNext()) {
+                    t.escolhaOperacao(read.nextInt(), read, c);
+                    System.out.println("");
+                }
+    }
+    
+}
